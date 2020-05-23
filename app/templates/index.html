@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Tamer</title>
+</head>
+<body>
+<form action="http://localhost:5000/v1/url" method="post" enctype="application/json">
+    <label for="url">Tame your URL</label><br/>
+    <input type="url" name="url" id="url"
+           placeholder="https://example.com"
+           pattern="https?://.*" size="30"
+           required><br/>
+    <label for="custom">Name your URL</label><br/>
+    <input type="text" name="custom" id="custom" placeholder="custom url name"><br/><br/>
+    <input type="submit" value="Just do it!"><br/>
+</form>
+{% if result %}
+<br/><br/>
+<label for="name">{{ result }}</label>
+{% endif %}
+</body>
+</html>
